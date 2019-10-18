@@ -1,0 +1,31 @@
+#sample config file, fit it to your scenario and place into
+#/etc/rpz-mimic.conf
+[Global]
+#verboes 0 syslog only, 1 stout too
+verbose=0
+#verbose_level
+#0 silent run
+#1 error only (default)
+#2 minimal messages
+#3 more messages
+#4 unused
+#5 command call
+#rpz_srv=rpz-srv.example.net
+##mind to add the trailing dot
+#rpz_zone=rpz.example.rpz.
+#dig_bin=/usr/bin/dig
+#rndc_bin=/sbin/rndc
+##named checkconf bin use /bin/true if named-checkonf is missing
+#chkconfig_bin=/sbin/named-checkconf
+##named checkzone bin use /bin/true if named-checzone is missing
+#chkzone_bin=/sbin/named-checkzone
+#named_dir=/tmp/rpz-mimic
+#named_inc=rpz_mimic.conf
+#zone_dir=/tmp/rpz-mimic/zones/rpz
+#state_file=/tmp/rpz-mimic.state
+
+[RPZ_Zone]
+master=ns1.none.rpz.
+slave=ns2.none.rpz.
+hostmaster=null@example.net
+ttl=2h
