@@ -214,8 +214,8 @@ def main(myself,argv):
     campi=re.search('^(\S+)\s+\d+\s+IN\s+A\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$',linea)
     if campi == None:
       continue
-    #strip rpz zone from record name
-    dominio=campi.group(1).replace(rpz_options['rpz_zone'],'')
+    #strip rpz zone from record name + traling dot
+    dominio=campi.group(1).replace('.'+rpz_options['rpz_zone'],'')
     landing_ip=campi.group(2)
     entire_blacklist[dominio]=landing_ip
     landing_ip_list[landing_ip]=1
