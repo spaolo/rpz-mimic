@@ -21,7 +21,6 @@ rpz_options['state_file']='/tmp/rpz-mimic.state'
 Config=ConfigParser.ConfigParser()
 Config.read("/etc/rpz-mimic.conf")
 #myself=os.path.basename(sys.argv[0])
-#syslog.openlog(myself,logoption=syslog.LOG_PID, facility=syslog.LOG_DAEMON)
 
 #logging utility,
 # log if verbose is equal or greater verbose_level
@@ -155,7 +154,8 @@ def rollback_file_and_die(file,extension):
 #
 def main(myself,argv):
   myself=os.path.basename(myself)
-  syslog.openlog(myself,logoption=syslog.LOG_PID, facility=syslog.LOG_DAEMON)
+  #syslog.openlog(myself,logoption=syslog.LOG_PID, facility=syslog.LOG_DAEMON)
+  syslog.openlog(myself,syslog.LOG_PID,syslog.LOG_DAEMON)
   lock_name='/tmp/'+myself+'.lock'
   #avoid multiple concurrent run
   lock_fh=open(lock_name,'a+')
