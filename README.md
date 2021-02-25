@@ -15,6 +15,10 @@ This is not error proof, following steps are taken to prevent disruptions, howev
   - named-checkzone is run against each generated zone before rndc reconfig
   - named_inc are rolled back to previous version in case of named-checkconf or rndc recnfig failures
 
+## Contributing
+Not much contributing here, in the insane case you are willing to, next wanted feature are:
+  - Check improvement for config files and named stability
+
 # Known limitation
   * Single rpz server
   * Single rpz zone
